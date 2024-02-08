@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Edit</h1>
+    <p><a href={% url 'index' %}>HOME</a></p>
+    <div>
+        <table>
+            <tbody>
+            <form action="/update/{{details.id}}" method="POST">
+                {% csrf_token %}
+                <tr>
+                    <td>Employee ID</td>
+                    <td><input type="text" name="employee_id" value="{{details.employee_id}}"></td>
+                </tr>
+                <tr>
+                    <td>Employee Name</td>
+                    <td><input type="text" name="employee_name" value="{{details.employee_name}}"></td>
+                </tr>
+                <tr>
+                    <td>Employee Phone</td>
+                    <td><input type="text" name="employee_phone" value="{{details.employee_phone}}"></td>
+                </tr>
+                <tr>
+                    <td><button>Submit</button></td>
+                </tr>
+
+            </form>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
